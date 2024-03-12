@@ -1,0 +1,80 @@
+<div class="container mt-5 bg-body-tertiary">
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+	<li [ngbNavItem]="1">
+		<button ngbNavLink>Add User</button>
+		<ng-template ngbNavContent>
+			
+      <div class="container  mt-5 ">
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <form (ngSubmit)="SubmitForm()" [formGroup]="userForm" class="mt-5">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" formControlName="name" id="name">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" formControlName="email" id="email">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" formControlName="password" id="password">
+              </div>
+              <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" name="age" formControlName="age" id="age">
+              </div>
+              <div class="d-flex mt-2 btn">
+                <button type="submit" class="btn btn-dark ">Submit</button>
+                <button type="reset" class="btn btn-dark ml-2">Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+          
+			
+		</ng-template>
+	</li>
+	<li [ngbNavItem]="2">
+		<button ngbNavLink>User List</button>
+		<ng-template ngbNavContent>
+			<table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>...</td>
+          </tr>
+        </tbody>
+      </table>
+		</ng-template>
+	</li>
+
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<!-- <pre>Active: {{ active }}</pre> -->
+</div>
